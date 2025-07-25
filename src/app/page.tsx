@@ -83,12 +83,12 @@ export default function Home() {
 
   return (
     <div>
-      <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 z-[-1]">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
       </div>
-      <div className="relative z-10">
+      <div className="relative z-0">
         <Hero />
         <About />
         <Skills skills={skills} />
