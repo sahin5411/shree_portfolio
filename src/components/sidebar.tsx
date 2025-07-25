@@ -26,7 +26,7 @@ const Sidebar = () => {
 
   return (
     <TooltipProvider>
-      <nav className="fixed left-0 top-0 hidden h-full w-24 flex-col items-center justify-between border-r border-border bg-background/50 py-8 backdrop-blur-sm md:flex z-50">
+      <nav className="fixed left-0 top-0 hidden h-full w-24 flex-col items-center justify-between border-r border-border bg-background/50 py-8 backdrop-blur-sm md:flex z-20">
         <Link href="#home">
             <span className="font-sora text-2xl font-bold text-primary">SP</span>
         </Link>

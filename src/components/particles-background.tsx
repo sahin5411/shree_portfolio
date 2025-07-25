@@ -9,13 +9,7 @@ export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    // this initializes the particles engine once, it's safe to call it multiple times
-    // this is needed only if you are not using the init prop on the Particles component
-    // otherwise, the init function will be called automatically
     loadSlim(async (engine: Engine) => {
-      // you can add custom shapes or presets here
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
     }).then(() => {
         setInit(true);
     });
@@ -99,7 +93,7 @@ export default function ParticlesBackground() {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
-        className="fixed inset-0 -z-10"
+        className="fixed inset-0 z-50"
       />
     );
   }
