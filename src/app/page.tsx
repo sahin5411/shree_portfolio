@@ -82,19 +82,32 @@ export default function Home() {
   const [experience] = useState(initialExperience);
 
   return (
-    <div className="relative z-0">
+    <div className="relative">
+      <div className="fixed inset-0 z-[-2] h-screen w-screen">
+          <video
+              src="/blackhole.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+      </div>
       <div className="fixed inset-0 z-[-1]">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
       </div>
-      <Hero />
-      <About />
-      <Skills skills={skills} />
-      <Experience experience={experience} />
-      <Projects projects={projects} />
-      <Contact />
-      <Footer />
+      <div className="relative z-10">
+        <Hero />
+        <About />
+        <Skills skills={skills} />
+        <Experience experience={experience} />
+        <Projects projects={projects} />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
