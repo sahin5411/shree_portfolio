@@ -2,24 +2,30 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Particles, { type Container } from "react-tsparticles";
-import { type IOptions, type Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import { type Engine } from "tsparticles-engine";
 
 export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    loadSlim(async (engine: Engine) => {
-    }).then(() => {
-        setInit(true);
-    });
+    const initParticles = async () =>
+      
+      {
+      // Initialize tsparticles and load the slim bundle
+      const { loadSlim } = await import("tsparticles-slim");
+      const { tsParticles } = await import("tsparticles-engine");
+      await loadSlim(tsParticles);
+      setInit(true);
+    };
+
+    initParticles();
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
 
-  const options: IOptions = useMemo(
+  const options = useMemo(
     () => ({
       background: {
         color: {
@@ -33,9 +39,7 @@ export default function ParticlesBackground() {
             enable: true,
             mode: "repulse",
           },
-          resize: {
-            enable: true,
-          }
+          resize: true,
         },
         modes: {
           repulse: {
@@ -59,7 +63,7 @@ export default function ParticlesBackground() {
           direction: "none",
           enable: true,
           outModes: {
-            default: "out",
+            default: "bounce",
           },
           random: false,
           speed: 0.5,
@@ -92,8 +96,9 @@ export default function ParticlesBackground() {
       <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
+        init={async (engine: Engine) => { const { loadSlim } = await import("tsparticles-slim"); await loadSlim(engine); }}
         options={options}
-        className="fixed inset-0 z-50"
+        className="fixed inset-0 z-20"
       />
     );
   }

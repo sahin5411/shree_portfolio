@@ -26,7 +26,11 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                className="pointer-events-none h-full w-full object-cover"
+                style={{
+                  top: '-350px',
+                  position: 'absolute',
+                }}
+                className="pointer-events-none h-full  rotate-180 w-full object-cover"
             />
             <div className="absolute inset-0 bg-black/30"></div>
         </div>
