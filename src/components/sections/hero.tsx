@@ -43,14 +43,14 @@ const Hero = () => {
         >
           <motion.h2
             variants={textVariants}
-            className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
+ className="font-sora text-3xl font-extrabold uppercase tracking-[6px] drop-shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text glow"
           >
             Surashree pal
           </motion.h2>
           <motion.h1
             variants={textVariants}
-            className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-          >
+            
+          className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-800 to-blue-400 text-transparent bg-clip-text"          >
             Angular Developer
           </motion.h1>
            <motion.p 
