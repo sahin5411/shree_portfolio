@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const textVariants = {
@@ -31,17 +31,17 @@ const imageVariants = {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-hidden">
-      <div className="container relative z-10 mx-auto flex h-screen flex-col items-center justify-center px-4 md:flex-row md:justify-between">
+    <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+      <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:justify-between">
         <motion.div
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-6 text-center md:items-start md:text-left"
+          className="flex flex-col items-center gap-6 text-center md:w-1/2 md:items-start md:text-left"
         >
           <motion.h2
             variants={textVariants}
-            className="font-sora text-3xl font-bold uppercase tracking-[4px] text-primary"
+            className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
             John Doe
           </motion.h2>
@@ -49,15 +49,21 @@ const Hero = () => {
             variants={textVariants}
             className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Web Developer & UI/UX Designer
+            Full-Stack Developer
           </motion.h1>
+           <motion.p 
+            variants={textVariants}
+            className="max-w-md text-muted-foreground"
+          >
+            I create stunning and functional websites that leave a lasting impression.
+          </motion.p>
           <motion.div
             variants={textVariants}
             className="flex flex-col gap-4 sm:flex-row"
           >
             <Button size="lg" asChild>
               <a href="#projects">
-                See the Latest Works
+                My Portfolio
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -70,7 +76,7 @@ const Hero = () => {
         </motion.div>
         
         <motion.div 
-            className="absolute bottom-0 right-0 h-1/2 w-full md:relative md:h-full md:w-1/2"
+            className="relative mt-12 h-80 w-80 md:mt-0 md:h-[500px] md:w-1/2"
             variants={imageVariants}
             initial="hidden"
             animate="visible"
@@ -83,7 +89,6 @@ const Hero = () => {
                 data-ai-hint="developer portrait"
             />
         </motion.div>
-
       </div>
     </section>
   );

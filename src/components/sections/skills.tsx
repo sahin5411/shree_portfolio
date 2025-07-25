@@ -30,7 +30,7 @@ interface SkillsProps {
 
 const Skills = ({ skills }: SkillsProps) => {
   return (
-    <section id="skills" className="bg-gradient-to-b from-[#0c0c1d] to-[#111132] py-16 sm:py-24">
+    <section id="skills" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <motion.div
             initial={{ opacity: 0, y: -100 }}
@@ -50,23 +50,21 @@ const Skills = ({ skills }: SkillsProps) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="relative grid grid-cols-2 gap-8 text-center md:grid-cols-4 lg:grid-cols-8"
+          className="grid grid-cols-2 gap-8 text-center md:grid-cols-4 lg:grid-cols-8"
         >
           {skills.map((skill) => (
             <motion.div
               key={skill}
               variants={itemVariants}
-              className="group relative flex flex-col items-center justify-center gap-2 rounded-lg p-6"
+              className="group flex flex-col items-center justify-center gap-2"
             >
               <motion.div
-                whileHover={{ y: -10, scale: 1.1 }}
-                className="flex flex-col items-center gap-2"
+                whileHover={{ y: -5, scale: 1.05 }}
+                className="flex h-24 w-24 items-center justify-center rounded-full bg-secondary/20 p-4 transition-all duration-300 group-hover:bg-secondary/30"
               >
-                <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-primary/50 bg-primary/10 transition-all duration-300 group-hover:bg-primary/20">
-                    <TechIcon name={skill} className="h-14 w-14 text-primary transition-transform duration-300 group-hover:scale-110" />
-                </div>
-                <span className="font-poppins text-sm font-medium text-foreground">{skill}</span>
+                  <TechIcon name={skill} className="h-full w-full object-contain" />
               </motion.div>
+              <span className="font-sora text-sm font-medium text-foreground">{skill}</span>
             </motion.div>
           ))}
         </motion.div>

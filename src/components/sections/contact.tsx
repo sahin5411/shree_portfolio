@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -22,18 +23,34 @@ const Contact = () => {
           <hr className="mx-auto mt-4 w-24 border-2 border-primary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
+            className="flex flex-col gap-8"
           >
-            <h3 className="font-sora text-3xl font-bold text-white">Let's Talk</h3>
-            <p className="mt-4 text-muted-foreground">
-              Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new opportunities and creative ideas.
-            </p>
+            <div>
+              <h3 className="font-sora text-3xl font-bold text-white">Let's Talk</h3>
+              <p className="mt-2 text-muted-foreground">
+                Have a project in mind or just want to say hi? I'm here to help.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-4">
+                    <Mail className="h-6 w-6 text-primary" />
+                    <span className="text-muted-foreground">john.doe@email.com</span>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <Phone className="h-6 w-6 text-primary" />
+                    <span className="text-muted-foreground">+1 234 567 890</span>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <MapPin className="h-6 w-6 text-primary" />
+                    <span className="text-muted-foreground">San Francisco, CA</span>
+                </div>
+            </div>
           </motion.div>
           <motion.form
             initial={{ opacity: 0, x: 100 }}
@@ -46,7 +63,7 @@ const Contact = () => {
             <Input type="text" placeholder="Your Name" required className="bg-secondary border-border focus:ring-primary" />
             <Input type="email" placeholder="Your Email" required className="bg-secondary border-border focus:ring-primary"/>
             <Textarea placeholder="Your Message" required className="bg-secondary border-border focus:ring-primary" />
-            <Button type="submit">Send Message</Button>
+            <Button type="submit" size="lg">Send Message</Button>
           </motion.form>
         </div>
       </div>

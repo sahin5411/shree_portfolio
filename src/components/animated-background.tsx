@@ -39,7 +39,7 @@ const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-background">
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-t from-[#0c0c1d] via-[#111132] to-[#0c0c1d]"
+        className="absolute inset-0 bg-gradient-to-t from-background via-[#111132] to-background"
         animate={{
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
         }}
@@ -57,7 +57,7 @@ const AnimatedBackground = () => {
         <Star key={star.id} {...star} />
       ))}
        <motion.div
-        className="absolute bottom-[-200px] left-[-200px] h-[400px] w-[400px] rounded-full bg-primary/20 blur-3xl"
+        className="absolute bottom-[-200px] left-[-200px] h-[400px] w-[400px] rounded-full bg-primary/10 blur-3xl"
         animate={{
           x: [0, 200, 0, -200, 0],
           y: [0, -200, 0, 200, 0],
@@ -71,7 +71,7 @@ const AnimatedBackground = () => {
         }}
       />
       <motion.div
-        className="absolute top-[-200px] right-[-200px] h-[400px] w-[400px] rounded-full bg-secondary/20 blur-3xl"
+        className="absolute top-[-200px] right-[-200px] h-[400px] w-[400px] rounded-full bg-secondary/10 blur-3xl"
         animate={{
           x: [0, -200, 0, 200, 0],
           y: [0, 200, 0, -200, 0],
@@ -84,7 +84,7 @@ const AnimatedBackground = () => {
           ease: 'linear',
         }}
       />
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-background to-transparent" />
     </div>
   );
 };

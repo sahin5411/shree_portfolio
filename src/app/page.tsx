@@ -7,6 +7,7 @@ import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
 import Contact from "@/components/sections/contact";
 import About from "@/components/sections/about";
+import Footer from "@/components/footer";
 
 const initialSkills = [
   "HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Tailwind CSS",
@@ -57,6 +58,7 @@ export default function Home() {
         <Skills skills={skills} />
         <Projects projects={projects} />
         <Contact />
+        <Footer />
       </div>
     </div>
   );
