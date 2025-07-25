@@ -43,13 +43,13 @@ const Hero = () => {
             variants={textVariants}
             className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
-            John Doe
+            Surashree pal
           </motion.h2>
           <motion.h1
             variants={textVariants}
             className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Full-Stack Developer
+            Angular Developer
           </motion.h1>
            <motion.p 
             variants={textVariants}
