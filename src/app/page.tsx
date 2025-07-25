@@ -88,7 +88,7 @@ export default function Home() {
         <div id="stars2"></div>
         <div id="stars3"></div>
       </div>
-      <div className="relative z-10">
+      <div className="relative z-0">
         <Hero />
         <About />
         <Skills skills={skills} />
