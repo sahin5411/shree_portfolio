@@ -30,8 +30,17 @@ interface SkillsProps {
 
 const Skills = ({ skills }: SkillsProps) => {
   return (
-    <section id="skills" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-16 sm:py-24 relative overflow-hidden">
+       <video
+        src="/download.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm -z-10"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
