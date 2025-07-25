@@ -17,9 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['"Space Grotesk"', 'sans-serif'],
-        code: ['monospace'],
+        poppins: ['Poppins', 'sans-serif'],
+        sora: ['Sora', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

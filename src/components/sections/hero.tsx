@@ -2,60 +2,88 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
+import Image from "next/image";
+
+const textVariants = {
+  hidden: { x: -500, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { scale: 0.5, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+};
 
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
-    },
-  };
-
   return (
-    <section id="home" className="relative h-screen min-h-[700px] w-full">
-      <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center text-center">
+    <section id="home" className="relative min-h-screen w-full overflow-hidden">
+      <div className="container relative z-10 mx-auto flex h-screen flex-col items-center justify-center px-4 md:flex-row md:justify-between">
         <motion.div
-          variants={containerVariants}
+          variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col items-center gap-6 text-center md:items-start md:text-left"
         >
+          <motion.h2
+            variants={textVariants}
+            className="font-sora text-3xl font-bold uppercase tracking-[4px] text-primary"
+          >
+            John Doe
+          </motion.h2>
           <motion.h1
-            variants={itemVariants}
-            className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            variants={textVariants}
+            className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Fullstack Developer Portfolio
+            Web Developer & UI/UX Designer
           </motion.h1>
-          <motion.p
-            variants={itemVariants}
-            className="max-w-3xl text-base text-foreground/80 md:text-xl"
+          <motion.div
+            variants={textVariants}
+            className="flex flex-col gap-4 sm:flex-row"
           >
-            I&apos;m a Full Stack Software Engineer with experience in Website,
-            Mobile, and Software development. Check out my projects and skills.
-          </motion.p>
-          <motion.div variants={itemVariants}>
-            <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <a href="#ai-prioritizer">
-                Learn more
-                <ArrowDown className="ml-2 h-5 w-5" />
+            <Button size="lg" asChild>
+              <a href="#projects">
+                See the Latest Works
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="#contact">
+                Contact Me
               </a>
             </Button>
           </motion.div>
         </motion.div>
+        
+        <motion.div 
+            className="absolute bottom-0 right-0 h-1/2 w-full md:relative md:h-full md:w-1/2"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <Image 
+                src="https://placehold.co/800x800.png" 
+                alt="Hero Image" 
+                layout="fill"
+                objectFit="contain"
+                data-ai-hint="developer portrait"
+            />
+        </motion.div>
+
       </div>
     </section>
   );
