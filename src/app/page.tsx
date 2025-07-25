@@ -11,7 +11,7 @@ import Footer from "@/components/footer";
 import Experience from "@/components/sections/experience";
 import { Suspense } from 'react';
 
-const Starfield = dynamic(() => import('@/components/starfield'), { ssr: false });
+const Starfield = dynamic(() => import('@/components/starfield').then(mod => mod.default), { ssr: false });
 
 const initialSkills = [
   "HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Tailwind CSS",

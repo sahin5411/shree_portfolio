@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from 'react';
-import { useFrame, Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 // @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
