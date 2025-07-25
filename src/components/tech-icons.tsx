@@ -82,6 +82,10 @@ const TechIcon = ({ name, className }: { name: string, className?: string }) => 
         return (
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" {...iconProps} />
         )
+    case 'angular':
+        return (
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" {...iconProps} />
+        )
     default:
       return (
         <SvgWrapper>
