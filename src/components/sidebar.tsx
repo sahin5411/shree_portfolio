@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Home, User, Code, Briefcase, Mail, Github, Linkedin, Twitter, Target } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { name: 'Home', href: '#home', icon: Home },
@@ -28,7 +29,7 @@ const Sidebar = () => {
     <TooltipProvider>
       <nav className="fixed left-0 top-0 hidden h-full w-24 flex-col items-center justify-between border-r border-border bg-background/50 py-8 backdrop-blur-sm md:flex z-20">
         <Link href="#home">
-            <span className="font-sora text-2xl font-bold text-primary">SP</span>
+            <span className="font-sora text-2xl font-bold bg-gradient-to-r from-primary via-purple-500 to-red-500 bg-clip-text text-transparent">SP</span>
         </Link>
         <div className="flex flex-col gap-4">
           {navLinks.map((link) => {
@@ -49,7 +50,8 @@ const Sidebar = () => {
             );
           })}
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center gap-4">
+         <ThemeToggle />
           {socialLinks.map((link) => (
              <Tooltip key={link.name}>
                 <TooltipTrigger asChild>

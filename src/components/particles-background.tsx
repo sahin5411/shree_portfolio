@@ -3,9 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { type Container } from "react-tsparticles";
 import { type Engine } from "tsparticles-engine";
+import { useTheme } from "next-themes";
 
 export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const initParticles = async () =>
@@ -29,7 +31,7 @@ export default function ParticlesBackground() {
     () => ({
       background: {
         color: {
-          value: "hsl(222 83% 4%)",
+          value: "transparent",
         },
       },
       fpsLimit: 60,
@@ -50,10 +52,10 @@ export default function ParticlesBackground() {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: theme === 'dark' ? "#ffffff" : "#000000",
         },
         links: {
-          color: "#ffffff",
+          color: theme === 'dark' ? "#ffffff" : "#000000",
           distance: 150,
           enable: true,
           opacity: 0.1,
@@ -88,7 +90,7 @@ export default function ParticlesBackground() {
       },
       detectRetina: true,
     }),
-    [],
+    [theme],
   );
 
   if (init) {
@@ -98,7 +100,7 @@ export default function ParticlesBackground() {
         particlesLoaded={particlesLoaded}
         init={async (engine: Engine) => { const { loadSlim } = await import("tsparticles-slim"); await loadSlim(engine); }}
         options={options}
-        className="fixed inset-0 z-20"
+        className="fixed inset-0 -z-10"
       />
     );
   }

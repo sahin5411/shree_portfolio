@@ -31,7 +31,9 @@ const Hero = () => {
             variants={textVariants}
             className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
-            Surashree pal
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-red-500 bg-clip-text text-transparent">
+              Surashree pal
+            </span>
           </motion.h2>
           <motion.h1
             variants={textVariants}
@@ -68,5 +70,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-    
