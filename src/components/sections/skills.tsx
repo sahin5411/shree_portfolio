@@ -1,8 +1,8 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import TechIcon from "@/components/tech-icons";
-import { Badge } from "@/components/ui/badge";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -50,17 +50,31 @@ const Skills = ({ skills }: SkillsProps) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 gap-4 text-center md:grid-cols-4 lg:grid-cols-6"
+          className="relative grid grid-cols-2 gap-4 text-center md:grid-cols-4 lg:grid-cols-6"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
               variants={itemVariants}
               className="group relative flex flex-col items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10"
-              whileHover={{ y: -5, scale: 1.05 }}
             >
-              <TechIcon name={skill} className="h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110" />
-              <span className="font-medium text-foreground">{skill}</span>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 20 + index * 5,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div className="h-24 w-24 rounded-full border-2 border-dashed border-primary/20" />
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -5, scale: 1.05 }}
+              >
+                <TechIcon name={skill} className="h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110" />
+                <span className="mt-2 font-medium text-foreground">{skill}</span>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
