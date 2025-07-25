@@ -68,3 +68,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes move-twink-back {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+
+  #stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  #stars {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCQQAAAAd0SU1FB+sLERYAKlgw/rEAAAB3SURBVEjH7dfBCcAwEAPAXTLBHVzAETzCKfz/B/uEkSgkna/Ue+nUsDVgLSUg+GgEwEsmGkCSqsvVVEsVw5kYkJyZu9pXScTAAvbslSEwAWsAVsB6ZgWkZg6AStwI18C6gxxgU4yElM0MM4B6g7QANAFs5P43cAW2v2sAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMTEtMTdUMTk6MjU6MTcrMDA6MDA21yEwAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTExLTE3VDE5OjI1OjE3KzAwOjAw/xPqMQAAAABJRU5ErkJggg==') repeat top center;
+    z-index: 0;
+    animation: move-twink-back 200s linear infinite;
+  }
+
+  #stars2 {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCQQAAAAd0SU1FB+sLERYAJA/92jgAAACNSURBVEjH7dXBCcBADADAVVRwA0fwBEsY/v+DJiSkkCj50s0Lp+TApGwB2QOywVpmAZYyo3AABLYyEAD2QpoBWAO2MhMQBzgDtrKJgQUQgWwGqL2wEwC2s4uBBSAB2ADsYlYAtjIWAPRyFwD2chcAtjIewA5g1h+sAPTx/xMAvI/sAXsABX4/v4gTAAAAAElFTkSuQmCC') repeat top center;
+    z-index: 1;
+    animation: move-twink-back 150s linear infinite;
+  }
+
+  #stars3 {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAAqo0jMgAAAAlwSFlzAAAAYAAAAGAA8GtCQQAAAAd0SU1FB+sLERYAJidH/xUAAABZSURBVEjH7dYxCsAgDATAvVh7l+AlPAV/30ETKkYLglG/2fNnC/7ACMaAsYwwUCwA5YIs8LweQJZdOqAyvjYEaYFqTAQEAAgA9cA2IBvAdkBWIOzV/x0A+Aed3wxePz2p3wAAAABJRU5ErkJggg==') repeat top center;
+    z-index: 2;
+    animation: move-twink-back 100s linear infinite;
+  }
+}

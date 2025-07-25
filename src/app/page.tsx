@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, Suspense } from "react";
-import dynamic from 'next/dynamic';
+import { useState } from "react";
 import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
@@ -9,8 +8,6 @@ import Contact from "@/components/sections/contact";
 import About from "@/components/sections/about";
 import Footer from "@/components/footer";
 import Experience from "@/components/sections/experience";
-
-const Starfield = dynamic(() => import('@/components/starfield'), { ssr: false });
 
 const initialSkills = [
   "HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Tailwind CSS",
@@ -86,10 +83,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="w-full h-auto fixed inset-0 z-0">
-        <Suspense fallback={null}>
-          <Starfield />
-        </Suspense>
+      <div className="fixed inset-0 z-0">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
       </div>
       <div className="relative z-10">
         <Hero />
