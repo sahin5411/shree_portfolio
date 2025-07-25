@@ -16,27 +16,26 @@ const textVariants = {
   },
 };
 
-const videoVariants = {
-    hidden: { scale: 0.5, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.5,
-      },
-    },
-  };
-
 const Hero = () => {
   return (
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-      <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:justify-between">
+      <div className="absolute inset-0 z-0 h-full w-full">
+          <video
+              src="https://www.shutterstock.com/shutterstock/videos/1086938923/preview/stock-footage-black-hole-in-space.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+      </div>
+      <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center">
         <motion.div
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-6 text-center md:w-1/2 md:items-start md:text-left"
+          className="flex flex-col items-center gap-6"
         >
           <motion.h2
             variants={textVariants}
@@ -72,22 +71,6 @@ const Hero = () => {
               </a>
             </Button>
           </motion.div>
-        </motion.div>
-        
-        <motion.div 
-            className="relative mt-12 h-80 w-80 md:mt-0 md:h-[500px] md:w-1/2"
-            variants={videoVariants}
-            initial="hidden"
-            animate="visible"
-        >
-            <video
-                src="https://www.shutterstock.com/shutterstock/videos/1086938923/preview/stock-footage-black-hole-in-space.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-full w-full object-contain"
-            />
         </motion.div>
       </div>
     </section>
