@@ -19,17 +19,7 @@ const textVariants = {
 const Hero = () => {
   return (
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 h-full w-full">
-            <video
-                src="/blackhole.webm"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="pointer-events-none h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+        <div className="absolute inset-0 z-0 h-full w-full bg-background/80 backdrop-blur-sm"></div>
       <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center">
         <motion.div
           variants={textVariants}

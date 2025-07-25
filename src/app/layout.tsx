@@ -20,7 +20,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body bg-background text-foreground antialiased">
+      <body className="font-body text-foreground antialiased">
         <div className="flex relative z-10">
           <Sidebar />
           <main className="flex-grow pl-0 md:pl-24">
