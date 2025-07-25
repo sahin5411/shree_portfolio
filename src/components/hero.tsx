@@ -16,6 +16,16 @@ const textVariants = {
   },
 };
 
+const floatingAnimation = {
+    y: ["-5px", "5px"],
+    transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+    }
+}
+
 const Hero = () => {
   return (
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
@@ -32,8 +42,9 @@ const Hero = () => {
             className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
             <motion.span
+              animate={floatingAnimation}
               whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-              className="inline-block bg-gradient-to-r from-primary via-purple-500 to-red-500 bg-clip-text text-transparent"
+              className="inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
             >
               Surashree pal
             </motion.span>
