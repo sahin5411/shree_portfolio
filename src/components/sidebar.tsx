@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, User, Code, Briefcase, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Home, User, Code, Briefcase, Mail, Github, Linkedin, Twitter, Target } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
 
@@ -10,7 +10,8 @@ const navLinks = [
   { name: 'Home', href: '#home', icon: Home },
   { name: 'About', href: '#about', icon: User },
   { name: 'Skills', href: '#skills', icon: Code },
-  { name: 'Projects', href: '#projects', icon: Briefcase },
+  { name: 'Experience', href: '#experience', icon: Briefcase },
+  { name: 'Projects', href: '#projects', icon: Target },
   { name: 'Contact', href: '#contact', icon: Mail },
 ];
 
@@ -25,7 +26,7 @@ const Sidebar = () => {
 
   return (
     <TooltipProvider>
-      <nav className="fixed left-0 top-0 hidden h-full w-24 flex-col items-center justify-between border-r border-border bg-background/50 py-8 backdrop-blur-sm md:flex">
+      <nav className="fixed left-0 top-0 hidden h-full w-24 flex-col items-center justify-between border-r border-border bg-background/50 py-8 backdrop-blur-sm md:flex z-50">
         <Link href="#home">
             <span className="font-sora text-2xl font-bold text-primary">JD</span>
         </Link>
@@ -35,11 +36,11 @@ const Sidebar = () => {
             return (
               <Tooltip key={link.name}>
                 <TooltipTrigger asChild>
-                  <Link href={link.href}>
-                    <Button variant="ghost" size="icon" className={`rounded-full transition-all duration-300 hover:bg-primary/20 hover:text-primary ${isActive ? 'bg-primary text-primary-foreground' : 'text-foreground'}`}>
+                  <Button asChild variant="ghost" size="icon" className={`rounded-full transition-all duration-300 hover:bg-primary/20 hover:text-primary ${isActive ? 'bg-primary text-primary-foreground' : 'text-foreground'}`}>
+                    <Link href={link.href}>
                       <link.icon className="h-6 w-6" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </TooltipTrigger>
                 <TooltipContent side="right">
                   <p>{link.name}</p>
