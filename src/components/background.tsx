@@ -1,11 +1,6 @@
-"use client";
-
-import dynamic from 'next/dynamic';
-
-const Starfield = dynamic(() => import('@/components/starfield'), { ssr: false });
 
 const Background = () => {
-    return <Starfield />;
+    return null;
 }
 
 export default Background;
