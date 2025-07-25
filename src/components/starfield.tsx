@@ -33,7 +33,7 @@ const StarfieldContent = (props: any) => {
   );
 };
 
-const StarsCanvas = () => (
+const Starfield = () => (
   <div className="w-full h-auto fixed inset-0 z-0">
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
@@ -44,4 +44,4 @@ const StarsCanvas = () => (
   </div>
 );
 
-export default StarsCanvas;
+export default Starfield;
