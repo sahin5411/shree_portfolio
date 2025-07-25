@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import AnimatedBackground from "@/components/animated-background";
+import Starfield from "@/components/starfield";
 import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
@@ -84,7 +84,7 @@ export default function Home() {
 
   return (
     <div>
-      <AnimatedBackground />
+      <Starfield />
       <div className="relative z-10">
         <Hero />
         <About />
