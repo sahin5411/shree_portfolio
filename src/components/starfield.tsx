@@ -1,7 +1,7 @@
 "use client";
-import { useState, useRef, Suspense } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Preload } from '@react-three/drei';
+import { useState, useRef } from 'react';
+import { useFrame, Canvas } from '@react-three/fiber';
+import { Points, PointMaterial } from '@react-three/drei';
 // @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
 
@@ -33,15 +33,12 @@ const StarfieldContent = (props: any) => {
   );
 };
 
-const Starfield = () => (
-  <div className="w-full h-auto fixed inset-0 z-0">
-    <Canvas camera={{ position: [0, 0, 1] }}>
-      <Suspense fallback={null}>
-        <StarfieldContent />
-      </Suspense>
-      <Preload all />
-    </Canvas>
-  </div>
-);
+const Starfield = () => {
+    return (
+        <Canvas camera={{ position: [0, 0, 1] }}>
+            <StarfieldContent />
+        </Canvas>
+    )
+}
 
 export default Starfield;

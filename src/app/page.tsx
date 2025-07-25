@@ -9,6 +9,7 @@ import Contact from "@/components/sections/contact";
 import About from "@/components/sections/about";
 import Footer from "@/components/footer";
 import Experience from "@/components/sections/experience";
+import { Suspense } from 'react';
 
 const Starfield = dynamic(() => import('@/components/starfield'), { ssr: false });
 
@@ -86,7 +87,11 @@ export default function Home() {
 
   return (
     <div>
-      <Starfield />
+      <div className="w-full h-auto fixed inset-0 z-0">
+        <Suspense fallback={null}>
+          <Starfield />
+        </Suspense>
+      </div>
       <div className="relative z-10">
         <Hero />
         <About />
