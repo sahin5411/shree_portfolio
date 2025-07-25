@@ -83,17 +83,6 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="fixed inset-0 z-[-2] h-screen w-screen">
-          <video
-              src="/blackhole.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="pointer-events-none h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-      </div>
       <div className="fixed inset-0 z-[-1]">
         <div id="stars"></div>
         <div id="stars2"></div>
