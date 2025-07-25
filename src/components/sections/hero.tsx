@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 const textVariants = {
   hidden: { x: -500, opacity: 0 },
@@ -17,17 +16,17 @@ const textVariants = {
   },
 };
 
-const imageVariants = {
-  hidden: { scale: 0.5, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      delay: 0.5,
+const videoVariants = {
+    hidden: { scale: 0.5, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 0.5,
+      },
     },
-  },
-};
+  };
 
 const Hero = () => {
   return (
@@ -77,16 +76,17 @@ const Hero = () => {
         
         <motion.div 
             className="relative mt-12 h-80 w-80 md:mt-0 md:h-[500px] md:w-1/2"
-            variants={imageVariants}
+            variants={videoVariants}
             initial="hidden"
             animate="visible"
         >
-            <Image 
-                src="https://placehold.co/800x800.png" 
-                alt="Hero Image" 
-                layout="fill"
-                objectFit="contain"
-                data-ai-hint="developer portrait"
+            <video
+                src="https://www.shutterstock.com/shutterstock/videos/1086938923/preview/stock-footage-black-hole-in-space.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-contain"
             />
         </motion.div>
       </div>
