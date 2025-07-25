@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Sidebar from '@/components/sidebar';
-import Background from '@/components/background';
 
 export const metadata: Metadata = {
   title: 'CosmicFolio | Fullstack Developer Portfolio',
@@ -22,7 +21,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body bg-background text-foreground antialiased">
-        <Background />
         <div className="flex relative z-10">
           <Sidebar />
           <main className="flex-grow pl-0 md:pl-24">
