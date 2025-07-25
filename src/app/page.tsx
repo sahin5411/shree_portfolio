@@ -82,21 +82,14 @@ export default function Home() {
   const [experience] = useState(initialExperience);
 
   return (
-    <div className="relative">
-      <div className="fixed inset-0 z-[-1]">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-      </div>
-      <div className="relative z-0">
-        <Hero />
-        <About />
-        <Skills skills={skills} />
-        <Experience experience={experience} />
-        <Projects projects={projects} />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
+    <>
+      <Hero />
+      <About />
+      <Skills skills={skills} />
+      <Experience experience={experience} />
+      <Projects projects={projects} />
+      <Contact />
+      <Footer />
+    </>
   );
 }
