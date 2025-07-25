@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Starfield from "@/components/starfield";
+import dynamic from 'next/dynamic';
 import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
@@ -9,6 +9,8 @@ import Contact from "@/components/sections/contact";
 import About from "@/components/sections/about";
 import Footer from "@/components/footer";
 import Experience from "@/components/sections/experience";
+
+const Starfield = dynamic(() => import('@/components/starfield'), { ssr: false });
 
 const initialSkills = [
   "HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Tailwind CSS",
