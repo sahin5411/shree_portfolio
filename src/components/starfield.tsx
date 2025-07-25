@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import { inSphere } from "maath/random";
@@ -33,6 +33,16 @@ const StarfieldContent = (props: any) => {
 };
 
 const Starfield = () => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
   return (
     <Canvas camera={{ position: [0, 0, 1] }}>
       <StarfieldContent />
