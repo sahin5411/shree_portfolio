@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { Home, User, Code, Briefcase, Mail, Github, Linkedin, Twitter, Target } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { name: 'Home', href: '#home', icon: Home },
@@ -51,7 +50,6 @@ const Sidebar = () => {
           })}
         </div>
         <div className="flex flex-col items-center gap-4">
-         <ThemeToggle />
           {socialLinks.map((link) => (
              <Tooltip key={link.name}>
                 <TooltipTrigger asChild>

@@ -31,9 +31,12 @@ const Hero = () => {
             variants={textVariants}
             className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-red-500 bg-clip-text text-transparent">
+            <motion.span
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              className="inline-block bg-gradient-to-r from-primary via-purple-500 to-red-500 bg-clip-text text-transparent"
+            >
               Surashree pal
-            </span>
+            </motion.span>
           </motion.h2>
           <motion.h1
             variants={textVariants}
