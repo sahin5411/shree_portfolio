@@ -21,7 +21,7 @@ const Hero = () => {
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0 h-full w-full">
           <video
-              src="https://www.shutterstock.com/shutterstock/videos/1086938923/preview/stock-footage-black-hole-in-space.mp4"
+              src="/blackhole.webm"
               autoPlay
               loop
               muted
