@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import dynamic from 'next/dynamic';
 import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
@@ -9,7 +9,6 @@ import Contact from "@/components/sections/contact";
 import About from "@/components/sections/about";
 import Footer from "@/components/footer";
 import Experience from "@/components/sections/experience";
-import { Suspense } from 'react';
 
 const Starfield = dynamic(() => import('@/components/starfield').then(mod => mod.default), { ssr: false });
 
