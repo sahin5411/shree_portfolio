@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Download } from "lucide-react";
 
 const textVariants = {
   hidden: { x: -500, opacity: 0 },
@@ -16,24 +16,20 @@ const textVariants = {
   },
 };
 
+const floatingAnimation = {
+    y: ["-5px", "5px"],
+    transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+    }
+}
+
 const Hero = () => {
   return (
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 h-full w-full">
-            <video
-                src="/blackhole.webm"
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{
-                  top: '-350px',
-                  position: 'absolute',
-                }}
-                className="pointer-events-none h-full  rotate-180 w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+        <div className="absolute inset-0 z-0 h-full w-full bg-background/80 backdrop-blur-sm"></div>
       <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center">
         <motion.div
           variants={textVariants}
@@ -43,14 +39,20 @@ const Hero = () => {
         >
           <motion.h2
             variants={textVariants}
- className="font-sora text-3xl font-extrabold uppercase tracking-[6px] drop-shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text glow"
+            className="font-sora text-2xl font-bold uppercase tracking-[4px] text-primary"
           >
-            Surashree pal
+            <motion.span
+              animate={floatingAnimation}
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              className="inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            >
+              Surashree pal
+            </motion.span>
           </motion.h2>
           <motion.h1
             variants={textVariants}
-            
-          className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-800 to-blue-400 text-transparent bg-clip-text"          >
+            className="font-sora text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          >
             Angular Developer
           </motion.h1>
            <motion.p 
@@ -64,9 +66,9 @@ const Hero = () => {
             className="flex flex-col gap-4 sm:flex-row"
           >
             <Button size="lg" asChild>
-              <a href="#projects">
-                My Portfolio
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="/resume.pdf" download>
+                Download Resume
+                <Download className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
