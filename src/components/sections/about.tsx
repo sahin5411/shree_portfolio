@@ -28,7 +28,7 @@ const About = () => {
             className="relative h-96"
           >
             <Image
-              src="https://placehold.co/600x600.png"
+              src="https://placehold.co/600x400.png"
               alt="About me"
               layout="fill"
               objectFit="cover"
