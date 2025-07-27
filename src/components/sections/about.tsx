@@ -28,7 +28,7 @@ const About = () => {
             className="relative h-96"
           >
             <Image
-              src="https://i.ibb.co/B5RX5X8x/aa195e63-3c68-43d9-a513-77aedc9ab554.jpg"
+              src="https://i.ibb.co/ZRMY8vBj/91fbac61-ee08-4611-85be-61869ababbf0.jpg"
               alt="About me"
               layout="fill"
               objectFit="cover"
