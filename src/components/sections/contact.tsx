@@ -40,11 +40,11 @@ const Contact = () => {
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-4">
                     <Mail className="h-6 w-6 text-primary" />
-                    <span className="text-muted-foreground">john.doe@email.com</span>
+                    <span className="text-muted-foreground">palsurashree9083@email.com</span>
                 </div>
                  <div className="flex items-center gap-4">
                     <Phone className="h-6 w-6 text-primary" />
-                    <span className="text-muted-foreground">+1 234 567 890</span>
+                    <span className="text-muted-foreground">+91 7003765780</span>
                 </div>
                  <div className="flex items-center gap-4">
                     <MapPin className="h-6 w-6 text-primary" />

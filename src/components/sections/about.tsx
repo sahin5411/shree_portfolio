@@ -43,10 +43,12 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="mt-6 text-muted-foreground">
-              I am a passionate and creative full-stack developer with a knack for building beautiful and functional web applications. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life, from concept to deployment.
+              I am a passionate and creative Angular developer with a strong focus on building responsive, dynamic, and user-centric web applications. With a deep understanding of modern front-end frameworks, especially Angular, I take pride in crafting clean, scalable, and maintainable code that brings ideas to life.
+
+My journey into web development began with a fascination for how interactive experiences are built on the web, which soon evolved into a dedicated career. Over the years, I’ve gained hands-on experience in developing full-stack applications, integrating powerful APIs, and optimizing performance for real-world scalability.
             </p>
             <p className="mt-4 text-muted-foreground">
-              My journey in web development started with a fascination for how things work on the internet, which quickly grew into a career. I am a lifelong learner, always excited to explore new technologies and improve my skills to deliver high-quality, scalable, and user-friendly solutions.
+              Driven by curiosity and a commitment to continuous learning, I stay up-to-date with the latest in Angular, TypeScript, RxJS, and modern web development practices. I thrive in collaborative environments where I can contribute to solving meaningful problems and delivering impactful digital experiences.
             </p>
           </motion.div>
         </div>
