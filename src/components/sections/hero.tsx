@@ -16,16 +16,24 @@ const textVariants = {
   },
 };
 
+// const floatingAnimation = {
+//     y: ["-5px", "5px"],
+//     transition: {
+//         duration: 3,
+//         repeat: Infinity,
+//         repeatType: "reverse",
+//         ease: "easeInOut",
+//     }
+// }
 const floatingAnimation = {
-    y: ["-5px", "5px"],
-    transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-    }
-}
-
+  y: [0, -10, 0],
+  transition: {
+    duration: 2,
+    repeat: Infinity,
+    repeatType: 'loop',
+    ease: 'easeInOut',
+  }
+};
 const Hero = () => {
   return (
     <section id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
@@ -66,7 +74,7 @@ const Hero = () => {
             className="flex flex-col gap-4 sm:flex-row"
           >
             <Button size="lg" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/public/SurashreePal_3years_Angular.pdf" download>
                 Download Resume
                 <Download className="ml-2 h-5 w-5" />
               </a>
